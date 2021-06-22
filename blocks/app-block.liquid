@@ -1,0 +1,95 @@
+{%- assign placeholders = "party-hat-frenchie.jpg,dog-in-birthday-hat.jpg,all-dogs-go-to-birthday.jpg,poochie-party-treats.jpg" | split: "," -%}
+
+<image-gallery data-id="{{block.id}}">
+  {%- if block.settings.heading -%}
+    <h2>{{ block.settings.heading }}</h2>
+  {%- endif -%}
+
+  {%- if block.settings.description -%}
+    <p>{{ block.settings.description }}</p>
+  {%- endif -%}
+
+  <div class="gallery">
+    <figure class="gallery__item gallery__item--1">
+      {%- if block.settings.image_1 -%}
+        <img src="{{ block.settings.image_1 | img_url: '1024x' }}" alt="{{ block.settings.image_1.alt }}">
+      {%- else -%}
+        <img src="{{ placeholders[0] | asset_url }}">
+      {%- endif -%}
+    </figure>
+    <figure class="gallery__item gallery__item--2">
+      {%- if block.settings.image_2 -%}
+        <img src="{{ block.settings.image_2 | img_url: '1024x' }}" alt="{{ block.settings.image_2.alt }}">
+      {%- else -%}
+        <img src="{{ placeholders[1] | asset_url }}">
+      {%- endif -%}
+    </figure>
+    <figure class="gallery__item gallery__item--3">
+      {%- if block.settings.image_3 -%}
+        <img src="{{ block.settings.image_3 | img_url: '1024x'}}" alt="{{ block.settings.image_3.alt }}">
+      {%- else -%}
+        <img src="{{ placeholders[2] | asset_url }}">
+      {%- endif -%}
+    </figure>
+    <figure class="gallery__item gallery__item--4">
+      {%- if block.settings.image_4 -%}
+        <img src="{{ block.settings.image_4 | img_url: '1024x' }}" alt="{{ block.settings.image_4.alt }}">
+      {%- else -%}
+        <img src="{{ placeholders[3] | asset_url }}">
+      {%- endif -%}
+    </figure>
+  </div>
+
+  <image-popup init>
+    <template image-popup>
+      <button close-button class="close-button">
+        {%- render 'icon-close' -%}
+      </button>
+    </template>
+  </image-popup>
+
+</image-gallery>
+
+{% schema %}
+  {
+    "name": "Image Gallery",
+    "target": "section",
+    "stylesheet": "image-gallery.css",
+    "javascript": "image-gallery.js",
+    "templates": ["product", "index"],
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Cute Puppy Gallery"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description",
+        "default": "A simple app block that shows a grid of images that can be customized by the merchant. Each image can be selected to show a popup with the full-sized image."
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "Image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_4",
+        "label": "Image 4"
+      }
+    ]
+  }
+{% endschema %}
