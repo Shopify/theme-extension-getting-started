@@ -9,6 +9,12 @@ image-gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s transform cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+image-gallery img:hover {
+  transform: scale(1.02);
 }
 
 image-gallery .gallery__item {

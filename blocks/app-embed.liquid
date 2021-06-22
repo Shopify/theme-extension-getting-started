@@ -1,0 +1,69 @@
+<button is="party-button">
+  <span class="visually-hidden">Start the party!</span>
+</button>
+
+<style>
+  .visually-hidden {
+    position: absolute!important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    word-wrap: normal!important;
+  }
+  
+  @-webkit-keyframes rainbow {
+    0% {border-color: hsl(0, 100%, 50%);}
+    14% {border-color: hsl(30,100%,50%);}
+    28% {border-color: hsl(60,100%,50%);}
+    42% {border-color: hsl(120,100%,50%);}
+    56% {border-color:  hsl(240,100%,50%);}
+    70% {border-color: hsl(280,100%,50%);}
+    84% {border-color: hsl(320,100%,50%);}
+    100% {border-color: hsl(255, 100%, 50%);}
+  }
+
+  button[is="party-button"] {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 80px;
+    height: 80px;
+    background: url("{{ 'dog-in-birthday-hat.jpg' | asset_img_url: '180x180' }}") no-repeat center;
+    border-radius: 50%;
+    border: 4px solid hsl(0, 100%, 50%);
+    animation: rainbow 10s infinite alternate;
+    -webkit-animation: rainbow 10s infinite alternate;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    z-index: 100;
+    transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  button[is="party-button"]:hover {
+    transform: scale(1.10);
+  }
+
+  button[is="party-button"]:active {
+    transform: scale(0.95);
+  }
+
+  canvas:empty {
+    display: initial;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Party",
+  "target": "body",
+  "stylesheet": "image-gallery.css",
+  "javascript": "party-button.js",
+  "settings": []
+}
+{% endschema %}
