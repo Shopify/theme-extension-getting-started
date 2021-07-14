@@ -1,6 +1,4 @@
-{%- assign placeholders = "party-hat-frenchie.jpg,dog-in-birthday-hat.jpg,all-dogs-go-to-birthday.jpg,poochie-party-treats.jpg" | split: "," -%}
-
-<image-gallery data-id="{{block.id}}">
+<image-gallery data-id="{{ block.id }}">
   {%- if block.settings.heading -%}
     <h2>{{ block.settings.heading }}</h2>
   {%- endif -%}
@@ -12,30 +10,30 @@
   <div class="gallery">
     <figure class="gallery__item gallery__item--1">
       {%- if block.settings.image_1 -%}
-        <img src="{{ block.settings.image_1 | img_url: '1024x' }}" alt="{{ block.settings.image_1.alt }}">
+        <img src="{{ block.settings.image_1 | img_url: '1024x' }}" alt="{{ block.settings.image_1.alt }}" loading="lazy" width="{{block.settings.image_1.width}}" height="{{block.settings.image_1.height}}">
       {%- else -%}
-        <img src="{{ placeholders[0] | asset_url }}">
+        <img src="{{ 'party-hat-frenchie.jpg' | asset_url }}" loading="lazy" width="925" height="617">
       {%- endif -%}
     </figure>
     <figure class="gallery__item gallery__item--2">
       {%- if block.settings.image_2 -%}
-        <img src="{{ block.settings.image_2 | img_url: '1024x' }}" alt="{{ block.settings.image_2.alt }}">
+        <img src="{{ block.settings.image_2 | img_url: '1024x' }}" alt="{{ block.settings.image_2.alt }}" loading="lazy" width="{{block.settings.image_2.width}}" height="{{block.settings.image_2.height}}">
       {%- else -%}
-        <img src="{{ placeholders[1] | asset_url }}">
+        <img src="{{ 'dog-in-birthday-hat.jpg' | asset_url }}" loading="lazy" width="925" height="617">
       {%- endif -%}
     </figure>
     <figure class="gallery__item gallery__item--3">
       {%- if block.settings.image_3 -%}
-        <img src="{{ block.settings.image_3 | img_url: '1024x'}}" alt="{{ block.settings.image_3.alt }}">
+        <img src="{{ block.settings.image_3 | img_url: '1024x'}}" alt="{{ block.settings.image_3.alt }}" loading="lazy" width="{{block.settings.image_3.width}}" height="{{block.settings.image_3.height}}">
       {%- else -%}
-        <img src="{{ placeholders[2] | asset_url }}">
+        <img src="{{ 'all-dogs-go-to-birthday.jpg' | asset_url }}" loading="lazy" width="925" height="921">
       {%- endif -%}
     </figure>
     <figure class="gallery__item gallery__item--4">
       {%- if block.settings.image_4 -%}
-        <img src="{{ block.settings.image_4 | img_url: '1024x' }}" alt="{{ block.settings.image_4.alt }}">
+        <img src="{{ block.settings.image_4 | img_url: '1024x' }}" alt="{{ block.settings.image_4.alt }}" loading="lazy" width="{{block.settings.image_4.width}}" height="{{block.settings.image_4.height}}">
       {%- else -%}
-        <img src="{{ placeholders[3] | asset_url }}">
+        <img src="{{ 'poochie-party-treats.jpg' | asset_url }}" loading="lazy" width="925" height="617">
       {%- endif -%}
     </figure>
   </div>

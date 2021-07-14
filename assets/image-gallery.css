@@ -13,6 +13,10 @@ image-gallery img {
   transition: 0.3s transform cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+image-gallery figure {
+  overflow: hidden;
+}
+
 image-gallery img:hover {
   transform: scale(1.02);
 }
@@ -70,6 +74,7 @@ image-popup {
 
 image-popup img {
   max-width: 100%;
+  height: auto;
 }
 
 image-popup .icon {
