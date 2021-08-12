@@ -31,12 +31,12 @@ class ImagePopup extends HTMLElement {
 
   constructor() {
     super();
-    // If we haven't yet set our template, than we don't want to render this custom element right away,
+    // If we haven't yet set our template, then we don't want to render this custom element right away,
     // so store its contents and then remove it from the DOM.
     if (this.hasAttribute('init')) this.remove();
 
     // If the template is contained within the custom element,
-    // than its the instance of it that was included in the page response.
+    // then it's the instance of it that was included in the page response.
     this.template = this.template || this.querySelector('template').content;
   }
 
