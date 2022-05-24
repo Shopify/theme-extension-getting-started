@@ -7,7 +7,7 @@ A [theme app extension](https://shopify.dev/apps/online-store/theme-app-extensio
 If this is your first time building a theme extension, take a look at the [Getting Started guide](https://shopify.dev/apps/online-store/theme-app-extensions/getting-started).
 
 
-TL;DR: [Install the Shopify CLI](https://shopify-dev-staging.shopifycloud.com/apps/tools/cli/installation), log into your partner account with `shopify login`, and then create a new theme extension using the `--getting-started` flag:
+TL;DR: [Install the Shopify CLI](https://shopify.dev/apps/tools/cli/installation), log into your partner account with `shopify login`, and then create a new theme extension using the `--getting-started` flag:
 
 ```
 shopify extension create --type=THEME_APP_EXTENSION --getting-started
